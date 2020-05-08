@@ -14,22 +14,32 @@
 </head>
 <body>
     <script src="index.js"></script>
-    <nav id="navigation">
-        <ul>
-            <li><a href="#about"> About </a></li>
-            <li><a href="#projects"> Projects </a></li>
-            <li><a href="#writing"> Writing </a></li>
+    <nav >
+        <ul class="navigation">
+            <li id="about-link"><a href="#about"> About </a></li>
+            <li id="project-link"><a href="#projects"> Projects </a></li>
+            <li id="writing-link"><a href="#writing"> Writing </a></li>
         </ul>
+        
     </nav>
-    <div id="about">
+    
+    <div class="about" id="about">
         <div id="contents">
             <div class="intro">
-                <h1 id="intro-header-1"> Hi, </h1>
-                <h1 id="intro-header-2"> I'm Tom </h1>
-                <p> I enjoy building clean, beautiful user interfaces </p>
+                <div class="header-grid">
+                    <h1 class="intro-header-1"> Hi, </h1>
+                    <h1 class="intro-header-2"> My name's Tom </h1>
+                </div>
             </div>
             <div id="technologies">
-                <!-- <h1 id="tech-header">Technologies</h1> -->
+                <div class="text"> 
+                    <h2 class="welcome-h2"> Welcome to my site! </h2>
+                    <p> I am a full stack developer and software engineer experienced in JavaScript, React, CSS, SCSS, and HTML on the front end, and Ruby on Rails on the backend. </p>
+                    <p> However, I am very comfortable learning new stacks and am willing to learn and work with the stack that best suits the job. </p>
+                    <p> My priority as a developer is to focus on building clean, scalable code, and designing beautiful and intuitive interfaces.  </p>
+                    <p> Below, you'll find a list of the technologies I'm most familiar with, as well as a growing collection of some of my projects, as well as articles I've written throughout my coding journey.</p>
+                    <p> Currently learning: Node.js, and trying to not get distracted by other shiny frameworks and libraries along the way... </p>
+                </div>
                 <div class='grid'>
                     <div id='front-end'>
                         <h3>Front End Development</h3>
@@ -45,7 +55,6 @@
                         <h3>Back End Development</h3>
                         <div id="text">
                             <p> Ruby on Rails </p>
-                            <p> Node.js </p>
                         </div>
                     </div>
                     <div id='tools'>
@@ -56,11 +65,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-    <div id="projects">
+    <div class="projects" id="projects">
         <div id="contents">
             <h1>Projects</h1>
             <div>
@@ -68,13 +76,23 @@
             </div>
         </div>
     </div>
-    <div id="writing">
+    <div class="writing" id="writing">
         <div id="contents">
             <h1>Writing</h1>
             <div>
                 <ul id="medium"></ul>
             </div>
         </div>
+    </div>
+    <div id="contact">
+        <div id="links">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/castagnatm/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/CastagnaTM" target="_blank">Github</a></li>
+                <li><a href="https://medium.com/@castagna.tm" target="_blank">Medium</a></li>
+            </ul>
+        </div>
+        <p>Lovingly built with JavaScript and SCSS</p>
     </div>
 </body>
 </html>

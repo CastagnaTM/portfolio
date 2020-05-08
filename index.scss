@@ -1,24 +1,19 @@
-$color1: #56a4e4;
-$color2: #3B4856;
-$color3: rgb(221, 222, 224);
-$color4: rgb(243, 243, 243);
-$header: rgb(50, 96, 134);
-$gradient1: linear-gradient($color1,#c5dafc, #e1e7fa, #eceffc, $color3);
-$gradient2: linear-gradient($color3, rgb(199, 200, 201));
-
-// background-image: linear-gradient(to right top, #dddee0, #b2b6bc, #898f98, #616a76, #3b4856);
+$color1: rgb(2, 49, 88);
+$color2: #F4F9FF;
+$color3: rgb(217, 233, 252);
+$header: rgb(93, 182, 255);
 
 
 @mixin grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 5px;
+    grid-gap: 10px;
     list-style: none;
     padding: 0;
     margin-bottom: 0;
 }
 
-@mixin grid-cards ($height: 500px, $shadow-bottom: $color2, $shadow-top: $color4, $background: $color3) {
+@mixin grid-cards ($height: 400px, $shadow-bottom: rgb(137, 156, 180), $shadow-top: rgb(243, 243, 243), $background: $color2) {
     display: block;
     width: 90%;
     margin-left: 5%;
@@ -30,7 +25,7 @@ $gradient2: linear-gradient($color3, rgb(199, 200, 201));
     border-radius: 15px;
     background-color: $background;
     text-decoration: none;
-    box-shadow: 2px 4px 10px $shadow-bottom, -2px -4px 10px $shadow-top;
+    box-shadow: 4px 4px 15px $shadow-bottom, -2px -4px 15px $shadow-top;
     margin-bottom: 5px;
 
     h4 {
@@ -43,22 +38,17 @@ $gradient2: linear-gradient($color3, rgb(199, 200, 201));
         max-width:90%;
         max-height: 50%;
     }
-
-    p {
-        color: rgb(2, 49, 88);
-        text-align: center;
-        font-size: large;
-        line-height: 1.5em;
-    }
+    
 }
 
 @mixin section-header {
 
-    background-image: $gradient2;
     margin-top: 0;
     padding: 2em;
 
 }
+
+html { width: 100%; margin: 0;}
 
 body { 
     font-family: Montserrat, 'Gill Sans', sans-serif;
@@ -66,10 +56,10 @@ body {
     scroll-behavior: smooth;
     overflow: scroll;
     height: 100vh;
-    max-width: 100%;
+    width: 100%;
 }
 
-#navigation ul {
+.navigation {
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -77,63 +67,132 @@ body {
     justify-content: space-evenly;
     position: fixed;
     width: 100%;
-    background-color: rgba(82, 93, 104, 0.671);
-    font-size: large;
+    font-size: xx-large;
     letter-spacing: 0.12em;
     height: 60px;
     margin-top: 0;
     align-items: center;
+    z-index: 2;
 
     a { 
         text-decoration: none;
-        color: $color3;
+        color: $color2;
+
+        &:hover {
+            color: $header;
+            letter-spacing: 0.3em;
+            transition: all 200ms ease-in-out;
+        }
+        
     }
+
+    #project-link, #writing-link { visibility: hidden; }
+    
+    
+    
+    @media screen and (max-width: 500px) {
+        #about-link { margin-left: 40%;}
+    }
+
+    transition: all 200ms ease-in-out;
+}
+
+.navigation.scrolling {
+    background-color: rgba(82, 93, 104, 0.856);
+    
+    a { font-size: 50%; }
+
+    #project-link, #writing-link { visibility: visible; }
+    #about-link { margin-left: 0;}
+
+
+    .active {
+        border-bottom: solid 3px $header;
+        font-size: 80%;
+        transition: all 200ms ease-in-out;
+    }
+
+    
+
+    transition: all 200ms ease-in-out;
 }
 
 
 #contents {
     text-align: center;
 
-    h1, h3{
+    h1 {
+        letter-spacing: 0.16em;
+        color: $color1;
+    }
+    h3 {
         letter-spacing: 0.16em;
         color: $header;
     }
 }
 
-
-
-#about {
+.about {
+    width: 100%;
+    box-sizing: border-box;
     padding: 1em;
-    background-image: $gradient1;
-
+    background-color: $color1;
 
     #contents {
         margin-top: 60px;
 
         .intro {
-            width: 100%;
+            
+            .header-grid {
+                display: grid;
+                height: 100vh;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 2fr 2fr 2fr 2fr;
+                grid-template-areas: 
+                "  .    .    .    .   "
+                "  .   box1 box1  .   "
+                "  .   box2 box2 box2 "
+                "  .    .    .    .   ";
 
-            h1 {
-                color: white;
-                font-size: 400%;
-            }
+                .intro-header-1 {
+                    grid-area: box1;
+                    text-align: left;
+                    font-size: 400%;
+                    color: rgb(243, 243, 243);
+                }
+                .intro-header-2 {
+                    grid-area: box2;
+                    text-align: center;
+                    font-size: 250%;
+                    color: $header;
+                }
 
-            p {
-                border: solid transparent;
-                border-radius: 15px;
-                background-color: white;
-                width: 90%;
-                margin-left: 5%;
             }
             
         }
 
         #technologies {
+            min-height: 100vh;
+            .text {
+                box-sizing: border-box;
+                border: solid transparent;
+                border-radius: 15px;
+                background-color: white;
+                width: 100%;
+                text-align: left;
+                padding: 2% 2% 4% 5%;
+                letter-spacing: 0.1em;
+
+                h2 { letter-spacing: 0.1em; color: $color1;}
+
+            }
             
             .grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+                p { color: white; }
             }
+           
           
         }
     }
@@ -144,36 +203,102 @@ body {
 #projects-container, #medium {
 
     @include grid-container;
+    padding: 0;
+    margin-bottom: -18px;
+    padding-bottom: 10px;
 
 }
 
 .project-card {
    
     @include grid-cards;
-   
+
+    position: relative;
+    div {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        height: 400px;
+        border: solid transparent;
+        border-radius: 15px;
+        background-color: rgba(12, 25, 36, 0.897);
+        justify-items: center;
+        transition: all 200ms ease-in-out;
+        p {
+            color: white;
+            text-align: center;
+            font-size: large;
+            line-height: 1.5em;
+        }
+        &:hover {
+            opacity: 1;
+            transition: all 200ms ease-in-out;
+        }
+    }
 }
 
 .article-card {
 
-    @include grid-cards($height: 300px, $shadow-bottom: $color4, $shadow-top: $color2);
+    @include grid-cards($height: 300px, $shadow-bottom: rgb(249, 252, 255), $shadow-top: rgb(168, 196, 230), $background: rgb(225, 236, 250));
+
+    p {
+        color: rgb(2, 49, 88);
+        text-align: center;
+        font-size: large;
+        line-height: 1.5em;
+    }
 
 }
 
-#projects { 
-    background-color: $color3;
+.projects { 
+    background-color: $color2;
     h1 { 
         @include section-header;
     }
+    margin-bottom: 1em;
 }
 
-#writing { 
+.writing { 
     
     background-color: $color3;
-    // background-image: $gradient2;
 
     h1 { 
         @include section-header;
+        background-image: linear-gradient($color2, $color2, $color3);
     }
     
+    
+}
+
+#contact {
+    height: 150px;
+    background-color: $color1;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0;
+        a {
+            text-decoration: none;
+            color: white;
+            &:hover {
+                color: $header;
+                font-size: larger;
+                transition: all 200ms ease-in-out;
+            }
+        }
+    }
+
+    p {
+        color: white;
+        text-align: center;
+        font-size: smaller;
+    }
+
 }
 
