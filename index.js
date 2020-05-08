@@ -1,20 +1,71 @@
-const activeNav = () => {
-    const navLinks = document.querySelectorAll('nav li a');
+const scrollChanges = () => {
     window.addEventListener('scroll', () => {
-        navLinks.forEach(link => {
-            if(link.hash){
-                let section = document.querySelector(link.hash);
-                if(section.offsetTop <= window.scrollY + 60
-                    && section.offsetTop + section.offsetHeight > window.scrollY + 60
-                    ){
-                    link.style.borderBottom="solid 3px rgb(86, 164, 228)";
-                    link.style.fontSize="larger";
-                } else {
-                    link.style.borderBottom="none"
-                    link.style.fontSize="large";
+        activeNav();
+        activeLinks();
+    })
+}
+
+const activeNav = () => {
+    const nav = document.querySelector('.navigation');
+    if(window.scrollY > 40) {
+        nav.classList.add('scrolling');
+    } else {
+        nav.classList.remove('scrolling');
+    }
+}
+
+const activeLinks = () => {
+    const navLinks = document.querySelectorAll('nav li a');
+    navLinks.forEach(link => {
+        if(link.hash){
+            let section = document.querySelector(link.hash);
+            if(section.offsetTop <= window.scrollY + 60
+                && section.offsetTop + section.offsetHeight > window.scrollY + 60
+                ){
+                link.classList.add("active")
+                if(section.className==="about"){
+                    backgroundScroll();
                 }
-            } 
-        })
+            } else {
+                link.classList.remove("active");
+            }
+        } 
+    })
+}
+
+const backgroundScroll = () => {
+    //about section background
+    const about = document.querySelector('.about')
+    const [aboutRed, aboutGreen, aboutBlue] = [2, 49, 88]
+    
+    // My name's Tom h1
+    const h1 = document.querySelector('.intro-header-2');
+    const [h1r, h1g, h1b] = [93, 182, 255];
+    
+    // text div
+    const text = document.querySelector('.text');
+    const h2 = document.querySelector(".welcome-h2");
+    const [textRed, textGreen, textBlue] = [255, 255, 255]; //text div background
+    const [pRed, pGreen, pBlue] = [0,0,0]; // text div p tag
+    const [h2r, h2g, h2b] = [2, 49, 88]; // text div h2
+    // 93, 182, 255
+    
+    window.addEventListener('scroll', () => {
+      let scroll = window.scrollY;
+      const [r, g, b] = [Math.min(10,aboutRed+scroll/10), Math.max(2, aboutGreen-scrollY/4), Math.max(30, aboutBlue-scroll/10)].map(Math.round);
+      about.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
+
+      const [h1Red, h1Green, h1Blue] = [Math.min(180, h1r+scroll/4), Math.min(180, h1g+scroll/4), Math.min(250, h1b+scroll)].map(Math.round);
+      h1.style.color = `rgb(${h1Red}, ${h1Green}, ${h1Blue})`; //25, 135, 125
+
+      const [tr,tg,tb] = [textRed-scroll/2, textGreen-scroll/2, textBlue-scroll/2].map(Math.round);
+      const [pr,pg,pb] = [pRed+scroll/4, pGreen+scroll/4, pBlue+scroll/4].map(Math.round);
+      text.style.backgroundColor = `rgb(${tr}, ${tg}, ${tb})`;
+      text.style.color = `rgb(${pr}, ${pg}, ${pb})`;
+
+      const [hr, hg, hb] = [Math.min(93, h2r+scroll/4), Math.min(182, h2g+scroll/2), Math.min(255, h2b+scroll/4)].map(Math.round);
+      h2.style.color = `rgb(${hr}, ${hg}, ${hb})`;
+
     })
 }
 
@@ -38,13 +89,15 @@ const loadProjects = () => {
         const img = document.createElement('img');
         img.className="project-image";
         img.src = item.image;
+        const info = document.createElement('div');
         const description = document.createElement('p');
         description.className = "description";
         description.innerText = item.description;
+        info.appendChild(description);
         
         card.appendChild(p);
         card.appendChild(img);
-        card.appendChild(description);
+        card.appendChild(info);
         container.appendChild(li);
         
     })
@@ -100,12 +153,10 @@ const displayArticles = (articles) => {
         })
         
     }
-
-    console.log(articles)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    activeNav();
+    scrollChanges();
     loadProjects();
     fetchArticles();
 
