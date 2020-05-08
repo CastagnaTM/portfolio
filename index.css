@@ -46,7 +46,9 @@ body {
 
 .navigation a:hover {
   color: #5db6ff;
-  font-size: larger;
+  letter-spacing: 0.3em;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .navigation #project-link, .navigation #writing-link {
@@ -61,8 +63,8 @@ body {
 
 .navigation.scrolling {
   background-color: rgba(82, 93, 104, 0.856);
-  -webkit-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .navigation.scrolling a {
@@ -80,6 +82,8 @@ body {
 .navigation.scrolling .active {
   border-bottom: solid 3px #5db6ff;
   font-size: 80%;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 #contents {
@@ -301,7 +305,7 @@ body {
 }
 
 #contact {
-  height: 100px;
+  height: 150px;
   background-color: #023158;
 }
 
@@ -333,5 +337,13 @@ body {
 #contact ul a:hover {
   color: #5db6ff;
   font-size: larger;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#contact p {
+  color: white;
+  text-align: center;
+  font-size: smaller;
 }
 /*# sourceMappingURL=index.css.map */
