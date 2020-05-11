@@ -83,21 +83,24 @@ const loadProjects = () => {
         card.href = item.link;
         card.target = "_blank";
         li.appendChild(card)
-        const p = document.createElement('h4');
-        p.className="project-name";
-        p.innerText = item.name;
+        const h4 = document.createElement('h4');
+        h4.className="project-name";
+        h4.innerText = item.name;
+        const hr1 = document.createElement('hr');
+        const imgContainer = document.createElement('div');
         const img = document.createElement('img');
         img.className="project-image";
         img.src = item.image;
-        const info = document.createElement('div');
+        imgContainer.appendChild(img);
+        const hr2 = document.createElement('hr');
         const description = document.createElement('p');
         description.className = "description";
         description.innerText = item.description;
-        info.appendChild(description);
         
-        card.appendChild(p);
-        card.appendChild(img);
-        card.appendChild(info);
+
+        card.appendChild(h4);
+        card.appendChild(imgContainer);
+        card.appendChild(description);
         container.appendChild(li);
         
     })
