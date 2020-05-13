@@ -43,7 +43,7 @@ const backgroundScroll = () => {
     const [h1r, h1g, h1b] = [93, 182, 255];
     
     // text div
-    const text = document.querySelector('.text');
+    const text = document.querySelector('.description');
     const h2 = document.querySelector(".welcome-h2");
     const [textRed, textGreen, textBlue] = [255, 255, 255]; //text div background
     const [pRed, pGreen, pBlue] = [0,0,0]; // text div p tag
@@ -52,7 +52,7 @@ const backgroundScroll = () => {
     
     window.addEventListener('scroll', () => {
       let scroll = window.scrollY;
-      const [r, g, b] = [Math.min(10,aboutRed+scroll/10), Math.max(2, aboutGreen-scrollY/4), Math.max(30, aboutBlue-scroll/10)].map(Math.round);
+      const [r, g, b] = [Math.min(5,aboutRed+scroll/10), Math.max(2, aboutGreen-scrollY/4), Math.max(10, aboutBlue-scroll/10)].map(Math.round);
       about.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
 
       const [h1Red, h1Green, h1Blue] = [Math.min(180, h1r+scroll/4), Math.min(180, h1g+scroll/4), Math.min(250, h1b+scroll)].map(Math.round);
@@ -63,7 +63,7 @@ const backgroundScroll = () => {
       text.style.backgroundColor = `rgb(${tr}, ${tg}, ${tb})`;
       text.style.color = `rgb(${pr}, ${pg}, ${pb})`;
 
-      const [hr, hg, hb] = [Math.min(93, h2r+scroll/4), Math.min(182, h2g+scroll/2), Math.min(255, h2b+scroll/4)].map(Math.round);
+      const [hr, hg, hb] = [Math.min(93, h2r+scroll/4), Math.min(182, h2g+scroll/3), Math.min(255, h2b+scroll/4)].map(Math.round);
       h2.style.color = `rgb(${hr}, ${hg}, ${hb})`;
 
     })
@@ -72,7 +72,7 @@ const backgroundScroll = () => {
 const loadProjects = () => {
     const container = document.getElementById('projects-container');
     const src = "./Assets/"
-    const projects = [{name: "Dan's Unforgettable Creations", image: `${src}DanUC.jpeg`, link: 'http://dan-prototype.surge.sh', description: 'Built in React.js, and featuring React Router and Responsive Design'}, 
+    const projects = [{name: "Dan's Unforgettable Creations", image: `${src}DanUC.jpg`, link: 'http://dan-prototype.surge.sh', description: 'Built in React.js, and featuring React Router and Responsive Design'}, 
     {name: 'Tarraske Digital', image: `${src}TD.png`, link: 'http://tarraskedigital.com', description: "Good ol' JavaScript, HTML, and CSS. Responsive Design" }, 
     {name: 'React Blaster', image: `${src}React_Blaster.png`, link: 'https://react-blaster.herokuapp.com/', description: "My Final Project from Flatiron School! A Full Stack point-and-click game built in React.js and Ruby on Rails for Safari, Chrome, or Firefox desktop Browsers"}, 
     {name: 'Imaginary Friend Simulator', image: `${src}cookie.png`, link: 'http://imaginary-friend.surge.sh/', description: "A Ruby on Rails collaborative school-project, updated to a full stack application with a React,js front-end. Works on  Safari, Chrome, or Firefox desktop Browsers"}]
@@ -81,16 +81,17 @@ const loadProjects = () => {
         const card = document.createElement('a');
         card.className = 'project-card';
         card.href = item.link;
+        card.rel="noopener";
         card.target = "_blank";
         li.appendChild(card)
         const h4 = document.createElement('h4');
         h4.className="project-name";
         h4.innerText = item.name;
-        const hr1 = document.createElement('hr');
         const imgContainer = document.createElement('div');
         const img = document.createElement('img');
         img.className="project-image";
         img.src = item.image;
+        img.alt=item.name;
         imgContainer.appendChild(img);
         const hr2 = document.createElement('hr');
         const description = document.createElement('p');
@@ -129,6 +130,7 @@ const displayArticles = (articles) => {
         h2.innerText = "Sorry, there was a problem loading my articles! While I'm fixing that, please feel free to see my work here: "
         a.href="https://medium.com/@castagna.tm";
         a.target="_blank";
+        a.rel="noopener";
         a.innerText="medium/castagna.tm";
         medium.appendChild(h2);
         medium.appendChild(a);
@@ -145,10 +147,12 @@ const displayArticles = (articles) => {
             card.className = 'article-card';
             card.href = item.link;
             card.target = "_blank";
-            const title = document.createElement('p');
+            card.rel="noopener";
+            const title = document.createElement('h4');
             title.innerText = item.title;
             const img = document.createElement('img');
             img.src = item.thumbnail;
+            img.alt=item.title;
             card.appendChild(title);
             card.appendChild(img);
             li.appendChild(card);

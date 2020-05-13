@@ -86,18 +86,19 @@ body {
   transition: all 200ms ease-in-out;
 }
 
-#contents {
+.contents {
   text-align: center;
 }
 
-#contents h1 {
+.contents h1 {
   letter-spacing: 0.16em;
   color: #023158;
 }
 
-#contents h3 {
-  letter-spacing: 0.16em;
+.contents h3 {
+  letter-spacing: 0.2em;
   color: #5db6ff;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .about {
@@ -108,11 +109,11 @@ body {
   background-color: #023158;
 }
 
-.about #contents {
+.about .contents {
   margin-top: 60px;
 }
 
-.about #contents .intro .header-grid {
+.about .contents .intro .header-grid {
   display: -ms-grid;
   display: grid;
   height: 100vh;
@@ -123,7 +124,7 @@ body {
       grid-template-areas: "  .    .    .    .   " "  .   box1 box1  .   " "  .   box2 box2 box2 " "  .    .    .    .   ";
 }
 
-.about #contents .intro .header-grid .intro-header-1 {
+.about .contents .intro .header-grid .intro-header-1 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
@@ -133,7 +134,7 @@ body {
   color: #f3f3f3;
 }
 
-.about #contents .intro .header-grid .intro-header-2 {
+.about .contents .intro .header-grid .intro-header-2 {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
@@ -141,13 +142,14 @@ body {
   text-align: center;
   font-size: 250%;
   color: #5db6ff;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.about #contents #technologies {
+.about .contents #technologies {
   min-height: 100vh;
 }
 
-.about #contents #technologies .text {
+.about .contents #technologies .description {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: solid transparent;
@@ -157,21 +159,23 @@ body {
   text-align: left;
   padding: 2% 2% 4% 5%;
   letter-spacing: 0.1em;
+  line-height: 1.8em;
 }
 
-.about #contents #technologies .text h2 {
-  letter-spacing: 0.1em;
+.about .contents #technologies .description h2 {
+  letter-spacing: 0.2em;
   color: #023158;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.about #contents #technologies .grid {
+.about .contents #technologies .grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.about #contents #technologies .grid p {
+.about .contents #technologies .grid p {
   color: white;
 }
 
@@ -209,10 +213,11 @@ body {
   -webkit-box-shadow: 4px 4px 15px #899cb4, -2px -4px 15px #f3f3f3;
           box-shadow: 4px 4px 15px #899cb4, -2px -4px 15px #f3f3f3;
   margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .project-card h4 {
-  color: black;
+  color: #023158;
   text-align: center;
   font-size: larger;
 }
@@ -226,7 +231,7 @@ body {
 .project-card p {
   position: absolute;
   bottom: 0;
-  color: #023158;
+  color: black;
   text-align: center;
   font-size: large;
   line-height: 1.5em;
@@ -263,10 +268,11 @@ body {
   -webkit-box-shadow: 4px 4px 15px #f9fcff, -2px -4px 15px #a8c4e6;
           box-shadow: 4px 4px 15px #f9fcff, -2px -4px 15px #a8c4e6;
   margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .article-card h4 {
-  color: black;
+  color: #023158;
   text-align: center;
   font-size: larger;
 }
@@ -280,7 +286,7 @@ body {
 .article-card p {
   position: absolute;
   bottom: 0;
-  color: #023158;
+  color: black;
   text-align: center;
   font-size: large;
   line-height: 1.5em;
@@ -313,12 +319,12 @@ body {
   background-image: linear-gradient(#F4F9FF, #F4F9FF, #d9e9fc);
 }
 
-#contact {
+.contact {
   height: 150px;
   background-color: #023158;
 }
 
-#contact ul {
+.contact ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -338,19 +344,19 @@ body {
   margin-bottom: 0;
 }
 
-#contact ul a {
+.contact ul a {
   text-decoration: none;
   color: white;
 }
 
-#contact ul a:hover {
+.contact ul a:hover {
   color: #5db6ff;
   font-size: larger;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
 
-#contact p {
+.contact p {
   color: white;
   text-align: center;
   font-size: smaller;
