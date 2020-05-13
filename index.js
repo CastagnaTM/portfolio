@@ -52,7 +52,7 @@ const backgroundScroll = () => {
     
     window.addEventListener('scroll', () => {
       let scroll = window.scrollY;
-      const [r, g, b] = [Math.min(5,aboutRed+scroll/10), Math.max(2, aboutGreen-scrollY/4), Math.max(10, aboutBlue-scroll/10)].map(Math.round);
+      const [r, g, b] = [Math.min(2,aboutRed+scroll/10), Math.max(2, aboutGreen-scrollY/4), Math.max(2, aboutBlue-scroll/10)].map(Math.round);
       about.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
 
       const [h1Red, h1Green, h1Blue] = [Math.min(180, h1r+scroll/4), Math.min(180, h1g+scroll/4), Math.min(250, h1b+scroll)].map(Math.round);
@@ -113,7 +113,8 @@ const fetchArticles = () => {
         fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@castagna.tm')
         .then(resp => resp.json())
         .then(data => {
-            displayArticles(data.items)
+            displayArticles(data.items);
+            console.log(data.items);
         })
     }
     catch (e) {

@@ -41,7 +41,7 @@ body {
 
 .navigation a {
   text-decoration: none;
-  color: #F4F9FF;
+  color: #E2FCEF;
 }
 
 .navigation a:hover {
@@ -121,7 +121,7 @@ body {
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 2fr 2fr 2fr 2fr;
       grid-template-rows: 2fr 2fr 2fr 2fr;
-      grid-template-areas: "  .    .    .    .   " "  .   box1 box1  .   " "  .   box2 box2 box2 " "  .    .    .    .   ";
+      grid-template-areas: "  .    .    .    .   " "  .   box1 box1  .   " "  .   box2 box2 box2 " " box3 box3 box3 box3 ";
 }
 
 .about .contents .intro .header-grid .intro-header-1 {
@@ -131,7 +131,7 @@ body {
   grid-area: box1;
   text-align: left;
   font-size: 400%;
-  color: #f3f3f3;
+  color: #E2FCEF;
 }
 
 .about .contents .intro .header-grid .intro-header-2 {
@@ -145,8 +145,15 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.about .contents #technologies {
-  min-height: 100vh;
+.about .contents .intro .header-grid .intro-subtitle {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: box3;
+  text-align: center;
+  color: #5db6ff;
+  font-size: large;
+  letter-spacing: 0.12em;
 }
 
 .about .contents #technologies .description {
@@ -154,7 +161,7 @@ body {
           box-sizing: border-box;
   border: solid transparent;
   border-radius: 15px;
-  background-color: white;
+  background-color: #E2FCEF;
   width: 100%;
   text-align: left;
   padding: 2% 2% 4% 5%;
@@ -176,18 +183,24 @@ body {
 }
 
 .about .contents #technologies .grid p {
-  color: white;
+  color: #E2FCEF;
 }
 
-#projects-container, #medium {
+#projects-container {
   display: -ms-grid;
   display: grid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 5px 10px;
   list-style: none;
-  padding: 0;
+  padding: 10px;
   margin-bottom: 0;
+  border: solid 10px transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
   margin-bottom: -18px;
   padding-bottom: 10px;
@@ -196,23 +209,16 @@ body {
 .project-card {
   position: relative;
   display: block;
-  width: 90%;
-  margin-left: 5%;
   max-width: 400px;
   height: 500px;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  margin: 0 auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border: solid transparent;
-  border-radius: 15px;
-  background-color: #F4F9FF;
+  background-color: #C6DBF0;
   text-decoration: none;
-  -webkit-box-shadow: 4px 4px 15px #899cb4, -2px -4px 15px #f3f3f3;
-          box-shadow: 4px 4px 15px #899cb4, -2px -4px 15px #f3f3f3;
-  margin-bottom: 5px;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -224,14 +230,13 @@ body {
 
 .project-card img {
   margin-top: 2%;
-  max-width: 90%;
   max-height: 45%;
 }
 
 .project-card p {
   position: absolute;
   bottom: 0;
-  color: black;
+  color: #020202;
   text-align: center;
   font-size: large;
   line-height: 1.5em;
@@ -248,11 +253,25 @@ body {
   margin-bottom: 5%;
 }
 
+#medium {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  margin-left: 5%;
+  padding: 0;
+  margin-bottom: -18px;
+  padding-bottom: 10px;
+}
+
 .article-card {
   position: relative;
   display: block;
   width: 90%;
-  margin-left: 5%;
   max-width: 400px;
   height: 300px;
   padding: 0;
@@ -265,8 +284,6 @@ body {
   border-radius: 15px;
   background-color: #e1ecfa;
   text-decoration: none;
-  -webkit-box-shadow: 4px 4px 15px #f9fcff, -2px -4px 15px #a8c4e6;
-          box-shadow: 4px 4px 15px #f9fcff, -2px -4px 15px #a8c4e6;
   margin-bottom: 5px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -299,24 +316,24 @@ body {
 }
 
 .projects {
-  background-color: #F4F9FF;
+  background-color: #3B1F2B;
   margin-bottom: 1em;
 }
 
 .projects h1 {
   margin-top: 0;
   padding: 2em;
+  color: #E2FCEF;
 }
 
 .writing {
-  background-color: #d9e9fc;
+  background-color: #1D2D44;
 }
 
 .writing h1 {
   margin-top: 0;
   padding: 2em;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#F4F9FF), color-stop(#F4F9FF), to(#d9e9fc));
-  background-image: linear-gradient(#F4F9FF, #F4F9FF, #d9e9fc);
+  color: #E2FCEF;
 }
 
 .contact {
@@ -346,7 +363,7 @@ body {
 
 .contact ul a {
   text-decoration: none;
-  color: white;
+  color: #E2FCEF;
 }
 
 .contact ul a:hover {
@@ -357,7 +374,7 @@ body {
 }
 
 .contact p {
-  color: white;
+  color: #E2FCEF;
   text-align: center;
   font-size: smaller;
 }
