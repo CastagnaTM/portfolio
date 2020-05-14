@@ -2,81 +2,26 @@ $color1: #023158;
 $color2: #E2FCEF;
 $color3: #3B1F2B;
 $color4: #020202;
-$color5: rgb(93, 182, 255);
-
+$color5: #5DB6FF;
 
 @mixin grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0;
-    margin-left: 5%;
-
-}
-
-
-@mixin grid-cards ($height: 500px, $shadow-bottom: rgb(137, 156, 180), $shadow-top: rgb(243, 243, 243), $background: $color2) {
-    position: relative;
-    display: block;
-    width: 90%;
-    max-width: 400px;
-    height: $height;
-    padding: 0;
-    box-sizing: border-box;
-    align-items: center;
-    border: solid transparent;
-    border-radius: 15px;
-    background-color: $background;
-    text-decoration: none;
-    margin-bottom: 5px;
-    font-family: 'Open Sans', sans-serif;
-
-    h4 {
-        color: $color1;
-        text-align: center;
-        font-size: larger;
-    }
-       
-    img {
-        margin-top: 2%;
-        max-width:90%;
-        max-height: 45%;
-    }
-
-    p {
-        position: absolute;
-        bottom: 0;
-        color: black;
-        text-align: center;
-        font-size: large;
-        line-height: 1.5em;
-        width: 98%;
-        margin-left: 1%;
-    }
-    
-}
-
-@mixin project-grid-container {
-    display: grid;
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 5px 10px;
+    grid-row-gap: 5px;
+    grid-column-gap: 10px;
     list-style: none;
     padding: 10px;
     margin-bottom: 0;
     border: solid 10px transparent;
-    align-items: center;
-//     width: 94%;
-//     margin-left: 3%;
+    align-items: center; 
 }
 
-@mixin project-grid-cards {
+@mixin grid-cards ( $height: 500px ) {
     position: relative;
     display: block;
     max-width: 400px;
-    height: 500px;
+    height: $height;
     padding: 0;
     margin: 0 auto;
     align-items: center;
@@ -94,6 +39,7 @@ $color5: rgb(93, 182, 255);
     img {
         margin-top: 2%;
         max-height: 45%;
+        max-width: 90%;
     }
 
     p {
@@ -180,8 +126,6 @@ body {
         transition: all 200ms ease-in-out;
     }
 
-    
-
     transition: all 200ms ease-in-out;
 }
 
@@ -248,7 +192,7 @@ body {
         }
 
         #technologies {
-            // min-height: 100vh;
+
             .description {
                 box-sizing: border-box;
                 border: solid transparent;
@@ -281,7 +225,7 @@ body {
 
 #projects-container {
 
-    @include project-grid-container;
+    @include grid-container;
     padding: 0;
     margin-bottom: -18px;
     padding-bottom: 10px;
@@ -290,7 +234,7 @@ body {
 
 .project-card {
    
-    @include project-grid-cards;
+    @include grid-cards;
 
     div { 
         height: 45%;
@@ -312,7 +256,7 @@ body {
 
 .article-card {
 
-    @include grid-cards($height: 300px, $shadow-bottom: rgb(249, 252, 255), $shadow-top: rgb(168, 196, 230), $background: rgb(225, 236, 250));
+    @include grid-cards( $height: 300px );
 
     img { margin-top: 5%;}
 

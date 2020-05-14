@@ -45,7 +45,7 @@ body {
 }
 
 .navigation a:hover {
-  color: #5db6ff;
+  color: #5DB6FF;
   letter-spacing: 0.3em;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -80,7 +80,7 @@ body {
 }
 
 .navigation.scrolling .active {
-  border-bottom: solid 3px #5db6ff;
+  border-bottom: solid 3px #5DB6FF;
   font-size: 80%;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -97,7 +97,7 @@ body {
 
 .contents h3 {
   letter-spacing: 0.2em;
-  color: #5db6ff;
+  color: #5DB6FF;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -141,7 +141,7 @@ body {
   grid-area: box2;
   text-align: center;
   font-size: 250%;
-  color: #5db6ff;
+  color: #5DB6FF;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -151,7 +151,7 @@ body {
   -ms-grid-column-span: 4;
   grid-area: box3;
   text-align: center;
-  color: #5db6ff;
+  color: #5DB6FF;
   font-size: large;
   letter-spacing: 0.12em;
 }
@@ -193,7 +193,8 @@ body {
           box-sizing: border-box;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 5px 10px;
+  grid-row-gap: 5px;
+  grid-column-gap: 10px;
   list-style: none;
   padding: 10px;
   margin-bottom: 0;
@@ -231,6 +232,7 @@ body {
 .project-card img {
   margin-top: 2%;
   max-height: 45%;
+  max-width: 90%;
 }
 
 .project-card p {
@@ -256,13 +258,19 @@ body {
 #medium {
   display: -ms-grid;
   display: grid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 10px;
+  grid-row-gap: 5px;
+  grid-column-gap: 10px;
   list-style: none;
-  padding: 0;
+  padding: 10px;
   margin-bottom: 0;
-  margin-left: 5%;
+  border: solid 10px transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
   margin-bottom: -18px;
   padding-bottom: 10px;
@@ -271,20 +279,16 @@ body {
 .article-card {
   position: relative;
   display: block;
-  width: 90%;
   max-width: 400px;
   height: 300px;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  margin: 0 auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border: solid transparent;
-  border-radius: 15px;
-  background-color: #e1ecfa;
+  background-color: #C6DBF0;
   text-decoration: none;
-  margin-bottom: 5px;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -296,14 +300,14 @@ body {
 
 .article-card img {
   margin-top: 2%;
-  max-width: 90%;
   max-height: 45%;
+  max-width: 90%;
 }
 
 .article-card p {
   position: absolute;
   bottom: 0;
-  color: black;
+  color: #020202;
   text-align: center;
   font-size: large;
   line-height: 1.5em;
@@ -367,7 +371,7 @@ body {
 }
 
 .contact ul a:hover {
-  color: #5db6ff;
+  color: #5DB6FF;
   font-size: larger;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;

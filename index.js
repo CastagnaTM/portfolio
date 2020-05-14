@@ -56,9 +56,9 @@ const backgroundScroll = () => {
       about.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
 
       const [h1Red, h1Green, h1Blue] = [Math.min(180, h1r+scroll/4), Math.min(180, h1g+scroll/4), Math.min(250, h1b+scroll)].map(Math.round);
-      h1.style.color = `rgb(${h1Red}, ${h1Green}, ${h1Blue})`; //25, 135, 125
+      h1.style.color = `rgb(${h1Red}, ${h1Green}, ${h1Blue})`; 
 
-      const [tr,tg,tb] = [textRed-scroll/2, textGreen-scroll/2, textBlue-scroll/2].map(Math.round);
+      const [tr,tg,tb] = [Math.max(2, textRed-scroll/2), Math.max(2, textGreen-scroll/2), Math.max(2, textBlue-scroll/2)].map(Math.round);
       const [pr,pg,pb] = [pRed+scroll/4, pGreen+scroll/4, pBlue+scroll/4].map(Math.round);
       text.style.backgroundColor = `rgb(${tr}, ${tg}, ${tb})`;
       text.style.color = `rgb(${pr}, ${pg}, ${pb})`;
