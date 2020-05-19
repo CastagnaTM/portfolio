@@ -3,30 +3,33 @@ $color2: #E2FCEF;
 $color3: #3B1F2B;
 $color4: #020202;
 $color5: #5DB6FF;
+$color6: #1D2D44;
+$color7: #C6DBF0;
 
-@mixin grid-container {
-    display: grid;
-    box-sizing: border-box;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-row-gap: 5px;
-    grid-column-gap: 10px;
-    list-style: none;
-    padding: 10px;
-    margin-bottom: 0;
-    border: solid 10px transparent;
-    align-items: center; 
-}
 
-@mixin grid-cards ( $height: 500px ) {
+// @mixin grid-container {
+//     display: grid;
+//     box-sizing: border-box;
+//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//     grid-row-gap: 5px;
+//     grid-column-gap: 10px;
+//     list-style: none;
+//     padding: 10px;
+//     margin-bottom: 0;
+//     border: solid 10px transparent;
+//     align-items: center; 
+// }
+
+@mixin grid-cards {
     position: relative;
     display: block;
     max-width: 400px;
-    height: $height;
+    height: 300px;;
     padding: 0;
     margin: 0 auto;
     align-items: center;
     border: solid transparent;
-    background-color: #C6DBF0;
+    background-color: $color7;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
 
@@ -76,59 +79,68 @@ body {
 .navigation {
     display: flex;
     flex-direction: row;
-    padding: 0;
     list-style: none;
     justify-content: space-evenly;
     position: fixed;
     width: 100%;
-    font-size: xx-large;
+    font-size: x-large;
     letter-spacing: 0.12em;
     height: 60px;
-    margin-top: 0;
+    margin: 0;
+    padding: 0;
     align-items: center;
     z-index: 2;
 
     a { 
         text-decoration: none;
-        color: $color2;
+        color: white;
+        
+    } 
+    .link {
+        position: relative;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $color5;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover:before {
+            visibility: visible;
+            width: 100%;
+        }
 
         &:hover {
             color: $color5;
-            letter-spacing: 0.3em;
-            transition: all 200ms ease-in-out;
         }
-        
     }
-
-    #project-link, #writing-link { visibility: hidden; }
-    
-    
-    
-    @media screen and (max-width: 500px) {
-        #about-link { margin-left: 40%;}
-    }
-
-    transition: all 200ms ease-in-out;
-}
-
-.navigation.scrolling {
-    background-color: rgba(82, 93, 104, 0.856);
-    
-    a { font-size: 50%; }
-
-    #project-link, #writing-link { visibility: visible; }
-    #about-link { margin-left: 0;}
-
-
-    .active {
-        border-bottom: solid 3px $color5;
-        font-size: 80%;
+    .link.active {
+        font-size: xx-large;
+        color: $color5;
         transition: all 200ms ease-in-out;
-    }
+    }   
 
-    transition: all 200ms ease-in-out;
+    @media screen and (max-width: 500px) {
+        font-size: large;
+        .link.active { font-size: large;}
+    }
 }
 
+.navigation.-about {
+    background-color: #001220;
+}
+.navigation.-projects {
+    background-color: rgb(19, 1, 8);
+}
+.navigation.-articles {
+    background-color: rgb(1, 17, 39);
+}
 
 .contents {
     text-align: center;
@@ -148,10 +160,10 @@ body {
     width: 100%;
     box-sizing: border-box;
     padding: 1em;
-    background-color: $color1;
+    background: linear-gradient($color1, $color4);
 
     .contents {
-        margin-top: 60px;
+        margin-top: 20px;
 
         .intro {
             
@@ -159,9 +171,8 @@ body {
                 display: grid;
                 height: 100vh;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-template-rows: 2fr 2fr 2fr 2fr;
+                grid-template-rows: 1fr 1fr 2fr;
                 grid-template-areas: 
-                "  .    .    .    .   "
                 "  .   box1 box1  .   "
                 "  .   box2 box2 box2 "
                 " box3 box3 box3 box3 ";
@@ -174,19 +185,59 @@ body {
                 }
                 .intro-header-2 {
                     grid-area: box2;
+                    position: relative;
                     text-align: center;
-                    font-size: 250%;
                     color: $color5;
                     font-family: 'Open Sans', sans-serif;
-                }
-                .intro-subtitle {
-                    grid-area: box3;
-                    text-align: center;
-                    color: $color5;
-                    font-size: large;
-                    letter-spacing: 0.12em;
-                }
 
+                    h1 {
+                        color: $color5;
+                        font-size: 250%;
+
+                    }
+                    .intro-subtitle {
+                        display: flex;
+                        flex-direction: row;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        color: $color5;
+                        font-size: large;
+                        letter-spacing: 0.12em;
+                    }
+                }
+                .social-links {
+                    grid-area: box3;
+                    ul {
+                        display: flex;
+                        flex-direction: row;
+                        list-style: none;
+                        width: 100%;
+                        justify-content: space-evenly;
+                        padding: 0;
+                        margin-top: 10%;
+    
+                        img {
+                            min-height: 60px;
+                            background-color: $color5;
+                            border-radius: 50%;
+                            border: solid #3ab37b 1px;
+                        }
+                    }
+                }
+                @media screen and (max-width: 665px) {
+                    grid-template-areas: 
+                    " box1 box1 box1  .   "
+                    " box2 box2 box2 box2 "
+                    " box3 box3 box3 box3 ";
+                    .intro-header-2 {
+                        .intro-subtitle {  
+                            position: relative;
+                            text-align: center;
+                            align-items: center;
+                        }
+                    }
+                }
             }
             
         }
@@ -197,7 +248,7 @@ body {
                 box-sizing: border-box;
                 border: solid transparent;
                 border-radius: 15px;
-                background-color: $color2;
+                background-color: transparent;
                 width: 100%;
                 text-align: left;
                 padding: 2% 2% 4% 5%;
@@ -222,67 +273,89 @@ body {
     }
 }
 
-
-#projects-container {
-
-    @include grid-container;
-    padding: 0;
-    margin-bottom: -18px;
-    padding-bottom: 10px;
-
-} 
-
-.project-card {
-   
-    @include grid-cards;
-
-    div { 
-        height: 45%;
-    
-        img { max-height: 96%;  margin-bottom: 5%;}
-
-    }
-
-}
-
-#medium {
-
-    @include grid-container;
-    padding: 0;
-    margin-bottom: -18px;
-    padding-bottom: 10px;
-
-}
-
-.article-card {
-
-    @include grid-cards( $height: 300px );
-
-    img { margin-top: 5%;}
-
-}
-
 .projects { 
 
     background-color: $color3;
+    min-height: 100vh;
+    align-items: center; 
+    
 
     h1 { 
         @include section-header;
-        color: $color2
+        color: $color7;
+        background-color: transparent;
     }
-    margin-bottom: 1em;
+
+    #projects-container {
+
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+
+        .project-card {
+    
+            // @include grid-cards;
+            margin-bottom: 10px;
+            height: 500px;
+            max-width: 400px;
+            width: 96%;
+            background-color: $color7;
+            margin: 0 auto;
+            h4 {
+                color: $color1;
+                text-align: center;
+                font-size: larger;
+                padding: 0.5em;
+            }
+        
+            div { 
+                height: 55%;
+            
+                img { max-height: 96%;  margin-bottom: 5%;}
+        
+            }
+            button {
+                background-color: $color4;
+                color: $color7;
+                width: 100px;
+            }
+        }
+    } 
 }
 
-.writing { 
+.articles { 
     
-    background-color: #1D2D44;
+    background-color: $color6;
 
     h1 { 
         @include section-header; 
         color: $color2;
     }
+    #medium {
+
+        display: grid;
+        box-sizing: border-box;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-row-gap: 5px;
+        grid-column-gap: 10px;
+        list-style: none;
+        padding: 10px;
+        margin-bottom: 0;
+        border: solid 10px transparent;
+        align-items: center; 
+        padding: 0;
+        margin-bottom: -18px;
+        padding-bottom: 10px;
     
+        .article-card {
+        
+            @include grid-cards;
+        
+            img { margin-top: 5%;}
+        
+        }
     
+    }
 }
 
 .contact {
@@ -297,7 +370,7 @@ body {
         align-items: center;
         list-style: none;
         padding: 0;
-        margin-bottom: 0;
+        margin: 0;
         a {
             text-decoration: none;
             color: $color2;
@@ -315,5 +388,13 @@ body {
         font-size: smaller;
     }
 
+}
+
+.contact.-about {
+   height: 30px;
+    p { 
+        margin-top: 0;
+        padding: 4px;
+    }
 }
 
