@@ -6,20 +6,6 @@ $color5: #5DB6FF;
 $color6: #1D2D44;
 $color7: #C6DBF0;
 
-
-// @mixin grid-container {
-//     display: grid;
-//     box-sizing: border-box;
-//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-//     grid-row-gap: 5px;
-//     grid-column-gap: 10px;
-//     list-style: none;
-//     padding: 10px;
-//     margin-bottom: 0;
-//     border: solid 10px transparent;
-//     align-items: center; 
-// }
-
 @mixin grid-cards {
     position: relative;
     display: block;
@@ -292,33 +278,102 @@ body {
         margin: 0 auto;
         padding: 0;
 
-        .project-card {
-    
-            // @include grid-cards;
-            margin-bottom: 10px;
-            height: 500px;
-            max-width: 400px;
-            width: 96%;
-            background-color: $color7;
+        li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             margin: 0 auto;
-            h4 {
-                color: $color1;
-                text-align: center;
-                font-size: larger;
-                padding: 0.5em;
+            margin-bottom: 10px;
+            max-width: 90%;
+            background-color: $color7;
+
+            .project-card {
+                margin: 0 auto;
+                height: 500px;
+                max-width: 400px;
+                width: 100%;
+                
+                h4 {
+                    color: $color1;
+                    text-align: center;
+                    font-size: larger;
+                    padding: 0.5em;
+                }
+
+                div { 
+
+                    display: flex;
+                    height: 65%;
+                    align-items: center;
+                
+                    img { 
+                        max-height: 96%;
+                        margin: 0 auto;
+                        margin-bottom: 5%;
+                    }
+
+                }
             }
-        
-            div { 
-                height: 55%;
-            
-                img { max-height: 96%;  margin-bottom: 5%;}
-        
+
+            .card-border {
+                display: inline-block;
+                height: 300px;
+                border: solid $color1 1px;
             }
-            button {
-                background-color: $color4;
-                color: $color7;
-                width: 100px;
+
+            .project-details {
+                margin: 0 auto;
+                height: 500px;
+                max-width: 400px;
+                width: 100%;
+                color: $color4;
+                h4 {
+                    color: $color1;
+                    text-align: center;
+                    font-size: larger;
+                    padding: 0.5em;
+                }
+                p {
+                    padding: 0.5em;
+                }
+                div {
+
+                    
+                    h4 {
+                        font-size: 150%;
+                        margin: 0 auto;
+                        padding: 0.5em;
+                    }
+                    ul {
+                        padding: 0;
+                        text-align: center;
+                        align-items: center;
+                        
+                    }
+                }
             }
+
+            @media screen and (max-width: 780px){
+                flex-direction: column;
+
+                .project-card {
+                    height: 400px;
+                    div {
+                        max-height: 80%;
+
+                        img {
+                            max-height: 90%;
+                        }
+                    }
+                }
+
+                .card-border {
+                    height: auto;
+                    width: 70%;
+                }
+                
+            }
+
         }
     } 
 }
@@ -397,4 +452,3 @@ body {
         padding: 4px;
     }
 }
-
