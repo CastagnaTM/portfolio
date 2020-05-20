@@ -47,7 +47,7 @@ $color7: #C6DBF0;
 @mixin section-header {
 
     margin-top: 0;
-    padding: 2em;
+    padding: 3em 0 1em 0;
 
 }
 
@@ -277,13 +277,14 @@ body {
         list-style: none;
         margin: 0 auto;
         padding: 0;
+        padding-bottom: 10px;
 
         li {
             display: flex;
             flex-direction: row;
             align-items: center;
             margin: 0 auto;
-            margin-bottom: 10px;
+            margin-top: 10px;
             max-width: 90%;
             background-color: $color7;
 
@@ -322,6 +323,9 @@ body {
             }
 
             .project-details {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
                 margin: 0 auto;
                 height: 500px;
                 max-width: 400px;
@@ -334,9 +338,12 @@ body {
                     padding: 0.5em;
                 }
                 p {
-                    padding: 0.5em;
+                    padding: 1em;
+                    margin: 0;
+                    margin-top: 1em;
                 }
-                div {
+
+                .features {
 
                     
                     h4 {
@@ -346,10 +353,44 @@ body {
                     }
                     ul {
                         padding: 0;
-                        text-align: center;
-                        align-items: center;
-                        
+                        li {
+                            display: list-item;
+                            list-style: circle;
+                            list-style-position: inside;
+                            padding: 5px;
+                        }
                     }
+                }
+                .links {
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    padding: 2em;
+                    justify-content: space-evenly;
+                    height: 280px;
+                    overflow: hidden;
+
+                    a {
+                        text-decoration: none;
+                        color: $color2;
+                        border: transparent;
+                        border-radius: 20px;
+                        background-color: $color4;
+                        padding: .8em .5em;
+                        font-size: large;
+                        transition: all 1s ease-in-out;
+
+                        &:hover {
+                            color: $color3;
+                            background-color: $color2;
+                            transition: all 200ms ease-in-out;
+                            letter-spacing: .2em;
+                        }
+                    }
+
+
+
+                    
                 }
             }
 

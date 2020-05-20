@@ -1,10 +1,10 @@
 const loadProjects = () => {
     const container = document.getElementById('projects-container');
     const src = "./Assets/"
-    const projects = [{name: "Dan's Unforgettable Creations", image: `${src}DanUC.jpg`, description: 'Built in React.js, and featuring React Router and Responsive Design', list: { tools: ['React', 'CSS'], features: ['React-Router', 'Responsive Design']}, liveLink: 'http://dan-prototype.surge.sh', codeLink: {frontend: 'https://github.com/CastagnaTM/template_for_Dan'}}, 
-    {name: 'Tarraske Digital', image: `${src}TD.png`, description: "Good ol' JavaScript, HTML, and CSS. Responsive Design", list: {tools: ['JavaScript', 'CSS'], features: ['Responsive Design']}, liveLink: 'http://tarraskedigital.com'}, 
-    {name: 'React Blaster', image: `${src}React_Blaster.png`, description: "My Final Project from Flatiron School! A Full Stack point-and-click game built in React.js and Ruby on Rails for Safari, Chrome, or Firefox desktop Browsers", list: {tools: ['React', 'CSS', 'Ruby On Rails'], features: ['CSS Animations', 'Custom Music', "It's really fun"]}, liveLink: 'https://react-blaster.herokuapp.com/', codeLink: {frontend: 'https://github.com/CastagnaTM/react_blaster', backend: 'https://github.com/CastagnaTM/react_blaster_backend'}}, 
-    {name: 'Imaginary Friend Simulator', image: `${src}cookie.png`, description: "A Ruby on Rails collaborative school-project, updated to a full stack application with a React,js front-end. Works on  Safari, Chrome, or Firefox desktop Browsers", list: { tools: ['React', 'CSS', 'Ruby On Rails'], features: ['Login System with Guest Access']}, liveLink: 'http://imaginary-friend.surge.sh/', codeLink: {frontend: 'https://github.com/CastagnaTM/react-imaginary', backend: 'https://github.com/CastagnaTM/react-imaginary-api'}}]
+    const projects = [{name: "Dan's Unforgettable Creations", image: `${src}DanUC.jpg`, description: 'Built in React.js, and featuring React Router and Responsive Design', features: ['React','React-Router', 'Responsive Design', 'CSS'], liveLink: 'http://dan-prototype.surge.sh', codeLink: {frontend: 'https://github.com/CastagnaTM/template_for_Dan'}}, 
+    {name: 'Tarraske Digital', image: `${src}TD.png`, description: "Good ol' JavaScript, HTML, and CSS. Responsive Design", features: ['JavaScript', 'Responsive Design', 'CSS'], liveLink: 'http://tarraskedigital.com'}, 
+    {name: 'React Blaster', image: `${src}React_Blaster.png`, description: "A Full Stack point-and-click target practice game", features: ['React', 'Ruby On Rails', 'CSS', 'CSS Animations'], liveLink: 'https://react-blaster.herokuapp.com/', codeLink: {frontend: 'https://github.com/CastagnaTM/react_blaster', backend: 'https://github.com/CastagnaTM/react_blaster_backend'}}, 
+    {name: 'Imaginary Friend Simulator', image: `${src}cookie.png`, description: "A Ruby on Rails collaborative school-project, updated to a full stack application with a React.js front-end.", features: ['React', 'Ruby On Rails', 'Login System with Guest Access', 'CSS'], liveLink: 'http://imaginary-friend.surge.sh/', codeLink: {frontend: 'https://github.com/CastagnaTM/react-imaginary', backend: 'https://github.com/CastagnaTM/react-imaginary-api'}}]
     projects.map(item => {
         const projectLI = document.createElement('li');
             const card = document.createElement('div');
@@ -33,42 +33,30 @@ const loadProjects = () => {
                 const description = document.createElement('p');
                     description.className = "description";
                     description.innerText = item.description;
-                const toolsDiv = document.createElement('div'); 
-                    const toolsHeader = document.createElement('h4');
-                        toolsHeader.innerText = 'Tools';
-                    const toolsUL = document.createElement('ul');
-                        item.list.tools.forEach(listItem => {
-                            let li = document.createElement('li');
-                                li.innerText = listItem;
-                            toolsUL.appendChild(li);
-                        });
-                toolsDiv.appendChild(toolsHeader);
-                toolsDiv.appendChild(toolsUL);
                 const featuresDiv = document.createElement('div');
-                    const featuresHeader = document.createElement('h4');
-                        featuresHeader.innerText = 'Features';
+                    featuresDiv.className = 'features';
                     const featuresUL = document.createElement('ul');
-                        item.list.features.forEach(listItem => {
+                        item.features.forEach(listItem => {
                             let li = document.createElement('li');
                                 li.innerText = listItem;
                             featuresUL.appendChild(li);
                         });
-                featuresDiv.appendChild(featuresHeader);
                 featuresDiv.appendChild(featuresUL);
                 const links = document.createElement('div');
+                    links.className = 'links';
                     const liveLink = document.createElement('a');
                         liveLink.href = item.liveLink;
                         liveLink.target = "_blank";
                         liveLink.rel = 'noopener';
                         liveLink.innerText = 'Live Project';
                 links.appendChild(liveLink);
-                    if(item.codeLink){
+                    if(item.codeLink){                            
                         if(item.codeLink.frontend){
                             let frontend = document.createElement('a');
                                 frontend.href = item.codeLink.frontend;
                                 frontend.target = "_blank";
                                 frontend.rel = 'noopener';
-                                frontend.innerText = item.codeLink.backend ? 'Front End Code' : 'Code';
+                                frontend.innerText = item.codeLink.backend ? 'Frontend Code' : 'Code';
                                 frontend.className = 'frontend-link';
                             links.appendChild(frontend);
                         }
@@ -82,7 +70,7 @@ const loadProjects = () => {
                             links.appendChild(backend);
                         }
                     }
-            [description, toolsDiv, featuresDiv, links].forEach(element => {details.appendChild(element);})
+            [description, featuresDiv, links].forEach(element => {details.appendChild(element);})
         container.appendChild(projectLI);
         
     })

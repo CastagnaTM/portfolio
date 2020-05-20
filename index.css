@@ -261,7 +261,7 @@ body {
 
 .projects h1 {
   margin-top: 0;
-  padding: 2em;
+  padding: 3em 0 1em 0;
   color: #C6DBF0;
   background-color: transparent;
 }
@@ -270,6 +270,7 @@ body {
   list-style: none;
   margin: 0 auto;
   padding: 0;
+  padding-bottom: 10px;
 }
 
 .projects #projects-container li {
@@ -284,7 +285,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-top: 10px;
   max-width: 90%;
   background-color: #C6DBF0;
 }
@@ -326,6 +327,16 @@ body {
 }
 
 .projects #projects-container li .project-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 0 auto;
   height: 500px;
   max-width: 400px;
@@ -341,21 +352,64 @@ body {
 }
 
 .projects #projects-container li .project-details p {
-  padding: 0.5em;
+  padding: 1em;
+  margin: 0;
+  margin-top: 1em;
 }
 
-.projects #projects-container li .project-details div h4 {
+.projects #projects-container li .project-details .features h4 {
   font-size: 150%;
   margin: 0 auto;
   padding: 0.5em;
 }
 
-.projects #projects-container li .project-details div ul {
+.projects #projects-container li .project-details .features ul {
   padding: 0;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+.projects #projects-container li .project-details .features ul li {
+  display: list-item;
+  list-style: circle;
+  list-style-position: inside;
+  padding: 5px;
+}
+
+.projects #projects-container li .project-details .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2em;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 280px;
+  overflow: hidden;
+}
+
+.projects #projects-container li .project-details .links a {
+  text-decoration: none;
+  color: #E2FCEF;
+  border: transparent;
+  border-radius: 20px;
+  background-color: #020202;
+  padding: .8em .5em;
+  font-size: large;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.projects #projects-container li .project-details .links a:hover {
+  color: #3B1F2B;
+  background-color: #E2FCEF;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  letter-spacing: .2em;
 }
 
 @media screen and (max-width: 780px) {
@@ -386,7 +440,7 @@ body {
 
 .articles h1 {
   margin-top: 0;
-  padding: 2em;
+  padding: 3em 0 1em 0;
   color: #E2FCEF;
 }
 
