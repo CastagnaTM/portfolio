@@ -54,7 +54,7 @@ $color7: #C6DBF0;
 html { width: 100%; margin: 0;}
 
 body { 
-    font-family: Montserrat, 'Gill Sans', sans-serif;
+    font-family:'Montserrat', 'Gill Sans', sans-serif;
     margin: 0 auto;
     scroll-behavior: smooth;
     overflow: scroll;
@@ -248,6 +248,8 @@ body {
                 }
 
             }
+
+            h1 { color: $color5; }
             
             .grid {
                 display: grid;
@@ -304,13 +306,27 @@ body {
                 div { 
 
                     display: flex;
-                    height: 65%;
+                    height: 75%;
                     align-items: center;
-                
-                    img { 
-                        max-height: 96%;
+                    
+                    a {
+                        display: block;
+                        max-width: 90%;
+                        height: 90%;
+                        padding: 0;
                         margin: 0 auto;
-                        margin-bottom: 5%;
+                        align-items: center;
+                        border: solid transparent;
+                        background-color: #C6DBF0;
+                        text-decoration: none;
+                        font-family: 'Open Sans', sans-serif;
+
+                        img { 
+                            display: block;
+                            max-height: 96%;
+                            margin: 0 auto;
+                            margin-bottom: 5%;
+                        }
                     }
 
                 }
@@ -376,7 +392,7 @@ body {
                         border: transparent;
                         border-radius: 20px;
                         background-color: $color4;
-                        padding: .8em .5em;
+                        padding: .6em .5em;
                         font-size: large;
                         transition: all 1s ease-in-out;
 
@@ -386,11 +402,7 @@ body {
                             transition: all 200ms ease-in-out;
                             letter-spacing: .2em;
                         }
-                    }
-
-
-
-                    
+                    }                    
                 }
             }
 

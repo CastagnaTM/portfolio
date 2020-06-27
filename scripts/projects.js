@@ -4,7 +4,7 @@ const loadProjects = () => {
     const projects = [{name: "Dan's Unforgettable Creations", image: `${src}DanUC.jpg`, description: 'Built in React.js, and featuring React Router and Responsive Design', features: ['React','React-Router', 'Responsive Design', 'CSS'], liveLink: 'http://dan-prototype.surge.sh', codeLink: {frontend: 'https://github.com/CastagnaTM/template_for_Dan'}}, 
     {name: 'Tarraske Digital', image: `${src}TD.png`, description: "Good ol' JavaScript, HTML, and CSS. Responsive Design", features: ['JavaScript', 'Responsive Design', 'CSS'], liveLink: 'http://tarraskedigital.com'}, 
     {name: 'React Blaster', image: `${src}React_Blaster.png`, description: "A Full Stack point-and-click target practice game", features: ['React', 'Ruby On Rails', 'CSS', 'CSS Animations'], liveLink: 'https://react-blaster.herokuapp.com/', codeLink: {frontend: 'https://github.com/CastagnaTM/react_blaster', backend: 'https://github.com/CastagnaTM/react_blaster_backend'}}, 
-    {name: 'Imaginary Friend Simulator', image: `${src}cookie.png`, description: "A Ruby on Rails collaborative school-project, updated to a full stack application with a React.js front-end.", features: ['React', 'Ruby On Rails', 'Login System with Guest Access', 'CSS'], liveLink: 'http://imaginary-friend.surge.sh/', codeLink: {frontend: 'https://github.com/CastagnaTM/react-imaginary', backend: 'https://github.com/CastagnaTM/react-imaginary-api'}}]
+    {name: 'Imaginary Friend Simulator', image: `${src}cookie.png`, description: "Generate an Imaginary Friend, guess their favorite activities, and try to beat your high score!", features: ['React', 'Ruby On Rails', 'Login System with Guest Access', 'CSS'], liveLink: 'http://imaginary-friend.surge.sh/', codeLink: {frontend: 'https://github.com/CastagnaTM/react-imaginary', backend: 'https://github.com/CastagnaTM/react-imaginary-api'}}]
     projects.map(item => {
         const projectLI = document.createElement('li');
             const card = document.createElement('div');
@@ -14,11 +14,16 @@ const loadProjects = () => {
                     h4.className="project-name";
                     h4.innerText = item.name;
                 const imgContainer = document.createElement('div');
-                    const img = document.createElement('img');
-                        img.className="project-image";
-                        img.src = item.image;
-                        img.alt=item.name;
-                imgContainer.appendChild(img);
+                    const imgLink = document.createElement('a');
+                        imgLink.href = item.liveLink;
+                        imgLink.target = "_blank";
+                        imgLink.rel = 'noopener';
+                        const img = document.createElement('img');
+                            img.className="project-image";
+                            img.src = item.image;
+                            img.alt=item.name;
+                    imgLink.appendChild(img);
+                imgContainer.appendChild(imgLink);
             card.appendChild(h4);
             card.appendChild(imgContainer);
 
@@ -56,7 +61,8 @@ const loadProjects = () => {
                                 frontend.href = item.codeLink.frontend;
                                 frontend.target = "_blank";
                                 frontend.rel = 'noopener';
-                                frontend.innerText = item.codeLink.backend ? 'Frontend Code' : 'Code';
+                                frontend.innerText = item.codeLink.backend ? 
+                                    'Frontend Code' : 'Code';
                                 frontend.className = 'frontend-link';
                             links.appendChild(frontend);
                         }
@@ -65,7 +71,8 @@ const loadProjects = () => {
                                 backend.href = item.codeLink.backend;
                                 backend.target = "_blank";
                                 backend.rel = 'noopener';
-                                backend.innerText = item.codeLink.frontend ? 'Backend End Code' : 'Code';
+                                backend.innerText = item.codeLink.frontend ? 
+                                    'Backend End Code' : 'Code';
                                 backend.className = 'backend-link';
                             links.appendChild(backend);
                         }

@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: Montserrat, 'Gill Sans', sans-serif;
+  font-family: 'Montserrat', 'Gill Sans', sans-serif;
   margin: 0 auto;
   scroll-behavior: smooth;
   overflow: scroll;
@@ -240,6 +240,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.about .contents #technologies h1 {
+  color: #5DB6FF;
+}
+
 .about .contents #technologies .grid {
   display: -ms-grid;
   display: grid;
@@ -308,13 +312,29 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 65%;
+  height: 75%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.projects #projects-container li .project-card div img {
+.projects #projects-container li .project-card div a {
+  display: block;
+  max-width: 90%;
+  height: 90%;
+  padding: 0;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid transparent;
+  background-color: #C6DBF0;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.projects #projects-container li .project-card div a img {
+  display: block;
   max-height: 96%;
   margin: 0 auto;
   margin-bottom: 5%;
@@ -398,7 +418,7 @@ body {
   border: transparent;
   border-radius: 20px;
   background-color: #020202;
-  padding: .8em .5em;
+  padding: .6em .5em;
   font-size: large;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;

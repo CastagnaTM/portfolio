@@ -37,6 +37,9 @@ const backgroundScroll = () => {
 const animate = () => {
   
   let tl = gsap.timeline({defaults:{duration: 1}});
+  tl.from('#mediumLink', {x: -1000});
+  tl.from('#linkedinLink', {x: -1000}, "-=.5");
+  tl.from('#gitLink', {x: -1000}, '-=.5');
   tl.from('.subtitle-1', {x: 214});
   tl.from('.subtitle-4', {x: -192}, "-=1");
   tl.from('.subtitle-2', { opacity: -1, duration: 2},"-=1");
