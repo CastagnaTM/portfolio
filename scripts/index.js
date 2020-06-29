@@ -40,8 +40,13 @@ const animate = () => {
   tl.from('#mediumLink', {x: -1000});
   tl.from('#linkedinLink', {x: -1000}, "-=.5");
   tl.from('#gitLink', {x: -1000}, '-=.5');
-  tl.from('.subtitle-1', {x: 214});
-  tl.from('.subtitle-4', {x: -192}, "-=1");
+  if(window.innerWidth < 480){
+    tl.from('.subtitle-1', {x: 200});
+    tl.from('.subtitle-4', {x: -170}, "-=1");
+  } else {
+    tl.from('.subtitle-1', {x: 210});
+    tl.from('.subtitle-4', {x: -188}, "-=1");
+  }
   tl.from('.subtitle-2', { opacity: -1, duration: 2},"-=1");
   tl.from('.subtitle-3', { opacity: 0, duration: 1.5}, "-=1.5");
 
@@ -56,7 +61,7 @@ const handleSkillsAccordions = () => {
       if(section.style.maxHeight) {
         section.style.maxHeight = null;
       } else {
-        section.style.maxHeight = section.scrollHeight + "px";
+        section.style.maxHeight = '1000px';
       }
     })
   }

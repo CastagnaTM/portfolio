@@ -28,7 +28,13 @@
                         <h1 class="intro-header-1"> Hi, </h1>
                         <div class="intro-header-2"> 
                             <h1 class='intro-name'>My name's Tom</h1> 
-                            <div class="intro-subtitle"> <p class='subtitle-1'>&lt;</p> <p class='subtitle-2'>Full Stack Developer</p> <p class='subtitle-center'>&nbsp;//&nbsp;</p> <p class='subtitle-3'>Software Engineer</p> <p class='subtitle-4'>&gt;</p> </div>
+                            <div class="intro-subtitle"> 
+                                <p class='subtitle-1'>&lt;</p> 
+                                <p class='subtitle-2'>&nbsp;Full Stack Developer</p> 
+                                <p class='subtitle-center'>&nbsp;//&nbsp;</p> 
+                                <p class='subtitle-3'>Software Engineer&nbsp;</p> 
+                                <p class='subtitle-4'>&gt;</p> 
+                            </div>
                         </div>
                         <div class="social-links">
                             <ul>
@@ -46,38 +52,54 @@
                         <p> As a developer, I leverage industry standard tools and development patterns to build clean, scalable code, and design beautiful and intuitive interfaces. </p>  
                     </div>
                     <h1> Skills </h1>
-                    <div class='skills-section'>
+                    <section class='skills-section'>
                         <div id='front-end'>
-                            <button class='accordion'>
-                                Front End Development
-                            </button>
+                            <button class='accordion' id="accordion-main"> Front End Development </button>
                             <div class="skills-column">
-                                <p>JavaScript</p>
-                                <p>React.js</p>
-                                <p>CSS</p>
-                                <p>SCSS</p>
-                                <p>gsap</p>
                                 <p>HTML</p>
+                                <button class='accordion'>JavaScript</button>
+                                <div class="skills-column" >
+                                    <p>ES6 Syntax</p>
+                                    <p>Form Validation</p>
+                                    <p>Single Page Applications</p>
+                                    <p>JWT Authentication</p>
+                                    <p>API Consumption</p>
+                                    <p>GSAP</p>
+                                    <button class='accordion'>React.js</button>
+                                    <div class="skills-column" >
+                                        <p>React Router</p>
+                                        <p>Hooks</p>
+                                        <p>Redux</p>
+                                    </div>
+                                </div>
+                                <button class='accordion'>Design</button>
+                                <div class="skills-column">
+                                    <p>CSS</p>
+                                    <p>SCSS</p>
+                                    <p>Material-UI</p>
+                                    <p>Styled Components</p>
+                                </div>
                             </div>
                         </div>
                         <div id='back-end'>
-                            <button class='accordion'>
-                                Back End Development
-                            </button>
+                            <button class='accordion' id="accordion-main"> Back End Development </button>
                             <div class="skills-column">
-                                <p> Ruby on Rails </p>
+                                <button class='accordion'> Ruby On Rails </button>
+                                <div class="skills-column">
+                                    <p>REST APIs</p>
+                                    <p>MVC Structure</p>
+                                </div>
                             </div>
                         </div>
                         <div id='tools'>
-                            <button class='accordion'>
-                                Tools
-                            </button>
+                            <button class='accordion' id="accordion-main"> Tools </button>
                             <div class="skills-column">
                                 <p>Github</p>
                                 <p>VSCode</p>
+                                <p>Figma</p>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
