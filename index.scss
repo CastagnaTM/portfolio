@@ -251,11 +251,57 @@ body {
 
             h1 { color: $color5; }
             
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            .skills-section {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                padding: 2em;
 
-                p { color: $color2; }
+                div {
+                    margin-left: 5%;
+
+                    .accordion {
+                        background-color: transparent;
+                        cursor: pointer;
+                        border: none;
+                        width: 400px;
+                        height: 60px;
+                        font-size: large;
+                        color: $color5;
+                        text-align: left;
+
+                        &:after {
+                            content: ' \002B'; 
+                            font-size: 1.5em;
+                            color: $color5;
+                            float: right;
+                            margin-left: 5px;
+                        }
+
+                    }
+
+                    .active{
+
+                        &:after {
+                            content: '\002D';
+                            font-size: 1.5em;
+                            color: $color5;
+                            float: right;
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .skills-column {
+                        max-height: 0;
+                        transition: max-height 0.2s ease-out;
+                        overflow: hidden;
+                        margin-left: 5%;
+                        p { color: $color2; }
+                    }
+                }
+                // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+                
             }
         }
     }

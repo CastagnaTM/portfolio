@@ -47,7 +47,23 @@ const animate = () => {
 
 }
 
+const handleSkillsAccordions = () => {
+  const accordion = document.getElementsByClassName('accordion');
+  for (let i = 0; i < accordion.length; i++) {
+    accordion[i].addEventListener('click', function() {
+      this.classList.toggle('active');
+      const section = this.nextElementSibling;
+      if(section.style.maxHeight) {
+        section.style.maxHeight = null;
+      } else {
+        section.style.maxHeight = section.scrollHeight + "px";
+      }
+    })
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   backgroundScroll();
   animate();
+  handleSkillsAccordions();
 })

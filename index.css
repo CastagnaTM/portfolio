@@ -244,14 +244,58 @@ body {
   color: #5DB6FF;
 }
 
-.about .contents #technologies .grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.about .contents #technologies .skills-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  padding: 2em;
 }
 
-.about .contents #technologies .grid p {
+.about .contents #technologies .skills-section div {
+  margin-left: 5%;
+}
+
+.about .contents #technologies .skills-section div .accordion {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 400px;
+  height: 60px;
+  font-size: large;
+  color: #5DB6FF;
+  text-align: left;
+}
+
+.about .contents #technologies .skills-section div .accordion:after {
+  content: ' \002B';
+  font-size: 1.5em;
+  color: #5DB6FF;
+  float: right;
+  margin-left: 5px;
+}
+
+.about .contents #technologies .skills-section div .active:after {
+  content: '\002D';
+  font-size: 1.5em;
+  color: #5DB6FF;
+  float: right;
+  margin-left: 5px;
+}
+
+.about .contents #technologies .skills-section div .skills-column {
+  max-height: 0;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+.about .contents #technologies .skills-section div .skills-column p {
   color: #E2FCEF;
 }
 
