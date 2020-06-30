@@ -53,7 +53,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #5DB6FF;
+  background-color: #86c7ff;
   visibility: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -65,12 +65,12 @@ body {
 }
 
 .navigation .link:hover {
-  color: #5DB6FF;
+  color: #86c7ff;
 }
 
 .navigation .link.active {
   font-size: xx-large;
-  color: #5DB6FF;
+  color: #86c7ff;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
@@ -102,12 +102,12 @@ body {
 
 .contents h1 {
   letter-spacing: 0.16em;
-  color: #023158;
+  color: #014983;
 }
 
 .contents h3 {
   letter-spacing: 0.2em;
-  color: #5DB6FF;
+  color: #86c7ff;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -116,8 +116,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, from(#023158), to(#020202));
-  background: linear-gradient(#023158, #020202);
+  background: -webkit-gradient(linear, left top, left bottom, from(#014983), to(#020202));
+  background: linear-gradient(#014983, #020202);
 }
 
 .about .contents {
@@ -142,7 +142,7 @@ body {
   grid-area: box1;
   text-align: left;
   font-size: 400%;
-  color: #E2FCEF;
+  color: #cbe5fa;
 }
 
 .about .contents .intro .header-grid .intro-header-2 {
@@ -152,12 +152,11 @@ body {
   grid-area: box2;
   position: relative;
   text-align: center;
-  color: #5DB6FF;
   font-family: 'Open Sans', sans-serif;
 }
 
 .about .contents .intro .header-grid .intro-header-2 h1 {
-  color: #5DB6FF;
+  color: #86c7ff;
   font-size: 250%;
 }
 
@@ -172,7 +171,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  color: #5DB6FF;
+  color: #cbe5fa;
   font-size: large;
   letter-spacing: 0.12em;
 }
@@ -203,7 +202,7 @@ body {
 
 .about .contents .intro .header-grid .social-links ul img {
   min-height: 60px;
-  background-color: #5DB6FF;
+  background-color: #86c7ff;
   border-radius: 50%;
   border: solid #3ab37b 1px;
 }
@@ -236,24 +235,28 @@ body {
 
 .about .contents #technologies .description h2 {
   letter-spacing: 0.2em;
-  color: #023158;
+  color: #014983;
   font-family: 'Open Sans', sans-serif;
 }
 
 .about .contents #technologies h1 {
-  color: #5DB6FF;
+  color: #86c7ff;
 }
 
 .about .contents #technologies .skills-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   text-align: left;
   padding: 2em;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  min-height: 400px;
 }
 
 @media screen and (max-width: 480px) {
@@ -266,19 +269,16 @@ body {
   margin-left: 5%;
 }
 
-.about .contents #technologies .skills-section div #accordion-main {
-  color: #C5FCFF;
-}
-
 .about .contents #technologies .skills-section div .accordion {
   background-color: transparent;
   cursor: pointer;
   border: none;
   height: 60px;
   font-size: large;
-  color: #5DB6FF;
+  color: #cbe5fa;
   text-align: left;
   line-height: 30px;
+  letter-spacing: .1em;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -286,7 +286,7 @@ body {
 .about .contents #technologies .skills-section div .accordion:after {
   content: ' \002B';
   font-size: 1.5em;
-  color: #5DB6FF;
+  color: #86c7ff;
   float: right;
   margin-left: 10px;
 }
@@ -294,7 +294,7 @@ body {
 .about .contents #technologies .skills-section div .active:after {
   content: '\002D';
   font-size: 1.5em;
-  color: #5DB6FF;
+  color: #86c7ff;
   float: right;
   margin-left: 5px;
 }
@@ -308,7 +308,7 @@ body {
 }
 
 .about .contents #technologies .skills-section div .skills-column p {
-  color: #E2FCEF;
+  color: white;
 }
 
 .projects {
@@ -358,7 +358,7 @@ body {
 }
 
 .projects #projects-container li .project-card h4 {
-  color: #023158;
+  color: #014983;
   text-align: center;
   font-size: larger;
   padding: 0.5em;
@@ -399,7 +399,7 @@ body {
 .projects #projects-container li .card-border {
   display: inline-block;
   height: 300px;
-  border: solid #023158 1px;
+  border: solid #014983 1px;
 }
 
 .projects #projects-container li .project-details {
@@ -421,7 +421,7 @@ body {
 }
 
 .projects #projects-container li .project-details h4 {
-  color: #023158;
+  color: #014983;
   text-align: center;
   font-size: larger;
   padding: 0.5em;
@@ -470,7 +470,7 @@ body {
 
 .projects #projects-container li .project-details .links a {
   text-decoration: none;
-  color: #E2FCEF;
+  color: #cbe5fa;
   border: transparent;
   border-radius: 20px;
   background-color: #020202;
@@ -482,7 +482,7 @@ body {
 
 .projects #projects-container li .project-details .links a:hover {
   color: #3B1F2B;
-  background-color: #E2FCEF;
+  background-color: #cbe5fa;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   letter-spacing: .2em;
@@ -517,7 +517,7 @@ body {
 .articles h1 {
   margin-top: 0;
   padding: 3em 0 1em 0;
-  color: #E2FCEF;
+  color: #cbe5fa;
 }
 
 .articles #medium {
@@ -558,7 +558,7 @@ body {
 }
 
 .articles #medium .article-card h4 {
-  color: #023158;
+  color: #014983;
   text-align: center;
   font-size: larger;
 }
@@ -586,7 +586,7 @@ body {
 
 .contact {
   height: 150px;
-  background-color: #023158;
+  background-color: #014983;
 }
 
 .contact ul {
@@ -611,18 +611,18 @@ body {
 
 .contact ul a {
   text-decoration: none;
-  color: #E2FCEF;
+  color: #cbe5fa;
 }
 
 .contact ul a:hover {
-  color: #5DB6FF;
+  color: #86c7ff;
   font-size: larger;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
 
 .contact p {
-  color: #E2FCEF;
+  color: #cbe5fa;
   text-align: center;
   font-size: smaller;
 }

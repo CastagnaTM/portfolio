@@ -1,8 +1,12 @@
-$color1: #023158;
-$color2: #E2FCEF;
+// switch skills back to rows, bring react out of javascript!
+
+$color1: #014983;
+// $color2: #E2FCEF;
+$color2: #cbe5fa;
 $color3: #3B1F2B;
 $color4: #020202;
-$color5: #5DB6FF;
+// $color5: #5DB6FF;
+$color5: #86c7ff;
 $color6: #1D2D44;
 $color7: #C6DBF0;
 
@@ -173,11 +177,10 @@ body {
                     grid-area: box2;
                     position: relative;
                     text-align: center;
-                    color: $color5;
                     font-family: 'Open Sans', sans-serif;
 
                     h1 {
-                        color: $color5;
+                        color: #86c7ff;
                         font-size: 250%;
 
                     }
@@ -187,7 +190,8 @@ body {
                         position: absolute;
                         bottom: 0;
                         left: 0;
-                        color: $color5;
+                        // color: #bbe0ff;
+                        color: $color2;
                         font-size: large;
                         letter-spacing: 0.12em;
                     }
@@ -253,9 +257,11 @@ body {
             
             .skills-section {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 text-align: left;
                 padding: 2em;
+                justify-content: space-evenly;
+                min-height: 400px;
 
                 @media screen and (max-width: 480px) {
                     padding: 0;
@@ -264,20 +270,16 @@ body {
                 div {
                     margin-left: 5%;
 
-                    #accordion-main {
-                        color: #C5FCFF;
-      
-                    }
-
                     .accordion {
                         background-color: transparent;
                         cursor: pointer;
                         border: none;
                         height: 60px;
                         font-size: large;
-                        color: $color5;
+                        color: $color2;
                         text-align: left;
                         line-height: 30px;
+                        letter-spacing: .1em;
                         transition: all 0.2s ease-out;
 
                         &:after {
@@ -306,7 +308,7 @@ body {
                         transition: max-height 0.2s ease-out;
                         overflow: hidden;
                         margin-left: 5%;
-                        p { color: $color2; }
+                        p { color: white; }
                     }
                 }
                 // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
