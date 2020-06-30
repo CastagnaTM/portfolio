@@ -252,7 +252,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   text-align: left;
-  padding: 2em;
+  padding: 2em, 0;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -265,14 +265,24 @@ body {
   }
 }
 
-.about .contents #technologies .skills-section div {
+.about .contents #technologies .skills-section div h3 {
+  color: #cbe5fa;
+  letter-spacing: .1em;
+}
+
+.about .contents #technologies .skills-section div .first-skills {
   margin-left: 5%;
 }
 
-.about .contents #technologies .skills-section div .accordion {
+.about .contents #technologies .skills-section div .first-skills p {
+  color: white;
+}
+
+.about .contents #technologies .skills-section div .first-skills .accordion {
   background-color: transparent;
   cursor: pointer;
   border: none;
+  padding: 0;
   height: 60px;
   font-size: large;
   color: #cbe5fa;
@@ -283,7 +293,7 @@ body {
   transition: all 0.2s ease-out;
 }
 
-.about .contents #technologies .skills-section div .accordion:after {
+.about .contents #technologies .skills-section div .first-skills .accordion:after {
   content: ' \002B';
   font-size: 1.5em;
   color: #86c7ff;
@@ -291,7 +301,7 @@ body {
   margin-left: 10px;
 }
 
-.about .contents #technologies .skills-section div .active:after {
+.about .contents #technologies .skills-section div .first-skills .active:after {
   content: '\002D';
   font-size: 1.5em;
   color: #86c7ff;
@@ -299,16 +309,12 @@ body {
   margin-left: 5px;
 }
 
-.about .contents #technologies .skills-section div .skills-column {
+.about .contents #technologies .skills-section div .first-skills .skills-column {
   max-height: 0;
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
   overflow: hidden;
   margin-left: 5%;
-}
-
-.about .contents #technologies .skills-section div .skills-column p {
-  color: white;
 }
 
 .projects {

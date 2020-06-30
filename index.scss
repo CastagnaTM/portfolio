@@ -259,7 +259,7 @@ body {
                 display: flex;
                 flex-direction: row;
                 text-align: left;
-                padding: 2em;
+                padding: 2em, 0;
                 justify-content: space-evenly;
                 min-height: 400px;
 
@@ -268,49 +268,62 @@ body {
                 }
 
                 div {
-                    margin-left: 5%;
 
-                    .accordion {
-                        background-color: transparent;
-                        cursor: pointer;
-                        border: none;
-                        height: 60px;
-                        font-size: large;
+                    h3 {
                         color: $color2;
-                        text-align: left;
-                        line-height: 30px;
                         letter-spacing: .1em;
-                        transition: all 0.2s ease-out;
-
-                        &:after {
-                            content: ' \002B'; 
-                            font-size: 1.5em;
-                            color: $color5;
-                            float: right;
-                            margin-left: 10px;
-                        }
-
                     }
 
-                    .active{
+                    .first-skills {
 
-                        &:after {
-                            content: '\002D';
-                            font-size: 1.5em;
-                            color: $color5;
-                            float: right;
-                            margin-left: 5px;
-                        }
-                    }
-
-                    .skills-column {
-                        max-height: 0;
-                        transition: max-height 0.2s ease-out;
-                        overflow: hidden;
                         margin-left: 5%;
+
                         p { color: white; }
+    
+                        .accordion {
+                            background-color: transparent;
+                            cursor: pointer;
+                            border: none;
+                            padding: 0;
+                            height: 60px;
+                            font-size: large;
+                            color: $color2;
+                            text-align: left;
+                            line-height: 30px;
+                            letter-spacing: .1em;
+                            transition: all 0.2s ease-out;
+    
+                            &:after {
+                                content: ' \002B'; 
+                                font-size: 1.5em;
+                                color: $color5;
+                                float: right;
+                                margin-left: 10px;
+                            }
+    
+                        }
+    
+                        .active{
+    
+                            &:after {
+                                content: '\002D';
+                                font-size: 1.5em;
+                                color: $color5;
+                                float: right;
+                                margin-left: 5px;
+                            }
+                        }
+    
+                        .skills-column {
+                            max-height: 0;
+                            transition: max-height 0.2s ease-out;
+                            overflow: hidden;
+                            margin-left: 5%;
+                            
+                        }
                     }
                 }
+
                 // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
                 
