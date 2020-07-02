@@ -1,5 +1,3 @@
-// switch skills back to rows, bring react out of javascript!
-
 $color1: #014983;
 // $color2: #E2FCEF;
 $color2: #cbe5fa;
@@ -161,7 +159,7 @@ body {
                 display: grid;
                 height: 100vh;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr 2fr;
+                grid-template-rows: 1fr 1fr 1fr;
                 grid-template-areas: 
                 "  .   box1 box1  .   "
                 "  .   box2 box2 box2 "
@@ -256,77 +254,95 @@ body {
             h1 { color: $color5; }
             
             .skills-section {
-                display: flex;
-                flex-direction: row;
-                text-align: left;
-                padding: 2em, 0;
-                justify-content: space-evenly;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-gap: 10px;
+                padding: 2em 0;
                 min-height: 400px;
+               
 
-                @media screen and (max-width: 480px) {
+                @media screen and (max-width: 1000px) {
                     padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    // text-align: left;
+                }
+
+                #tools {
+                    ul {
+                        margin-left: 30%;
+                        @media screen and (max-width: 1000px)   {
+                            margin: 0;
+                        }
+                    }
                 }
 
                 div {
+                   
 
-                    h3 {
+                    h2 {
                         color: $color2;
                         letter-spacing: .1em;
+                        text-align: center;
                     }
 
-                    .first-skills {
+                    ul {
+                        margin-left: 20%;
+                        list-style: none;
+                        text-align: left;
 
-                        margin-left: 5%;
-
-                        p { color: white; }
-    
-                        .accordion {
-                            background-color: transparent;
-                            cursor: pointer;
-                            border: none;
+                        @media screen and (max-width: 1000px){
+                            text-align: center;
+                            margin: 0;
                             padding: 0;
-                            height: 60px;
-                            font-size: large;
-                            color: $color2;
-                            text-align: left;
-                            line-height: 30px;
-                            letter-spacing: .1em;
-                            transition: all 0.2s ease-out;
-    
-                            &:after {
-                                content: ' \002B'; 
-                                font-size: 1.5em;
-                                color: $color5;
-                                float: right;
-                                margin-left: 10px;
-                            }
-    
                         }
-    
-                        .active{
-    
-                            &:after {
-                                content: '\002D';
-                                font-size: 1.5em;
-                                color: $color5;
-                                float: right;
-                                margin-left: 5px;
-                            }
+                    }
+            
+                    p { color: white;}
+
+                    .accordion {
+                        background-color: transparent;
+                        cursor: pointer;
+                        border: none;
+                        padding: 0;
+                        height: 60px;
+                        font-size: large;
+                        color: $color2;
+                        text-align: left;
+                        line-height: 30px;
+                        letter-spacing: .1em;
+                        transition: all 0.2s ease-out;
+
+                        &:after {
+                            content: ' \002B'; 
+                            font-size: 1.5em;
+                            color: $color5;
+                            float: right;
+                            margin-left: 10px;
                         }
-    
-                        .skills-column {
-                            max-height: 0;
-                            transition: max-height 0.2s ease-out;
-                            overflow: hidden;
-                            margin-left: 5%;
-                            
+
+                    }
+
+                    .active{
+
+                        &:after {
+                            content: '\002D';
+                            font-size: 1.5em;
+                            color: $color5;
+                            float: right;
+                            margin-left: 5px;
                         }
+                    }
+
+                    .skills-column {
+                        max-height: 0;
+                        transition: max-height 0.2s ease-out;
+                        overflow: hidden;
+                        margin-left: 5%;
+                        
                     }
                 }
-
-                // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-                
             }
         }
     }

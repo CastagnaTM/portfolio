@@ -130,8 +130,8 @@ body {
   height: 100vh;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 2fr;
-      grid-template-rows: 1fr 1fr 2fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
       grid-template-areas: "  .   box1 box1  .   " "  .   box2 box2 box2 " " box3 box3 box3 box3 ";
 }
 
@@ -244,41 +244,63 @@ body {
 }
 
 .about .contents #technologies .skills-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: left;
-  padding: 2em, 0;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  padding: 2em 0;
   min-height: 400px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1000px) {
   .about .contents #technologies .skills-section {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.about .contents #technologies .skills-section #tools ul {
+  margin-left: 30%;
+}
+
+@media screen and (max-width: 1000px) {
+  .about .contents #technologies .skills-section #tools ul {
+    margin: 0;
+  }
+}
+
+.about .contents #technologies .skills-section div h2 {
+  color: #cbe5fa;
+  letter-spacing: .1em;
+  text-align: center;
+}
+
+.about .contents #technologies .skills-section div ul {
+  margin-left: 20%;
+  list-style: none;
+  text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+  .about .contents #technologies .skills-section div ul {
+    text-align: center;
+    margin: 0;
     padding: 0;
   }
 }
 
-.about .contents #technologies .skills-section div h3 {
-  color: #cbe5fa;
-  letter-spacing: .1em;
-}
-
-.about .contents #technologies .skills-section div .first-skills {
-  margin-left: 5%;
-}
-
-.about .contents #technologies .skills-section div .first-skills p {
+.about .contents #technologies .skills-section div p {
   color: white;
 }
 
-.about .contents #technologies .skills-section div .first-skills .accordion {
+.about .contents #technologies .skills-section div .accordion {
   background-color: transparent;
   cursor: pointer;
   border: none;
@@ -293,7 +315,7 @@ body {
   transition: all 0.2s ease-out;
 }
 
-.about .contents #technologies .skills-section div .first-skills .accordion:after {
+.about .contents #technologies .skills-section div .accordion:after {
   content: ' \002B';
   font-size: 1.5em;
   color: #86c7ff;
@@ -301,7 +323,7 @@ body {
   margin-left: 10px;
 }
 
-.about .contents #technologies .skills-section div .first-skills .active:after {
+.about .contents #technologies .skills-section div .active:after {
   content: '\002D';
   font-size: 1.5em;
   color: #86c7ff;
@@ -309,7 +331,7 @@ body {
   margin-left: 5px;
 }
 
-.about .contents #technologies .skills-section div .first-skills .skills-column {
+.about .contents #technologies .skills-section div .skills-column {
   max-height: 0;
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
