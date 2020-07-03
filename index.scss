@@ -269,14 +269,14 @@ body {
                     // text-align: left;
                 }
 
-                #tools {
-                    ul {
-                        margin-left: 30%;
-                        @media screen and (max-width: 1000px)   {
-                            margin: 0;
-                        }
-                    }
-                }
+                // #tools {
+                //     ul {
+                //         margin-left: 30%;
+                //         @media screen and (max-width: 1000px)   {
+                //             margin: 0;
+                //         }
+                //     }
+                // }
 
                 div {
                    
@@ -288,14 +288,16 @@ body {
                     }
 
                     ul {
-                        margin-left: 20%;
+                        margin: 0 auto;
+                        padding: 0;
                         list-style: none;
                         text-align: left;
+                        display: flex;
+                        flex-direction: column;
+                        width: max-content;
 
-                        @media screen and (max-width: 1000px){
-                            text-align: center;
-                            margin: 0;
-                            padding: 0;
+                        li {
+                            width: max-content;
                         }
                     }
             

@@ -266,16 +266,6 @@ body {
   }
 }
 
-.about .contents #technologies .skills-section #tools ul {
-  margin-left: 30%;
-}
-
-@media screen and (max-width: 1000px) {
-  .about .contents #technologies .skills-section #tools ul {
-    margin: 0;
-  }
-}
-
 .about .contents #technologies .skills-section div h2 {
   color: #cbe5fa;
   letter-spacing: .1em;
@@ -283,17 +273,26 @@ body {
 }
 
 .about .contents #technologies .skills-section div ul {
-  margin-left: 20%;
+  margin: 0 auto;
+  padding: 0;
   list-style: none;
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
-@media screen and (max-width: 1000px) {
-  .about .contents #technologies .skills-section div ul {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
+.about .contents #technologies .skills-section div ul li {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .about .contents #technologies .skills-section div p {
