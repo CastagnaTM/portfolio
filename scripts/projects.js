@@ -1,10 +1,27 @@
 const loadProjects = () => {
     const container = document.getElementById('projects-container');
     const src = "./Assets/"
-    const projects = [{name: "Dan's Unforgettable Creations", image: `${src}DanUC.jpg`, description: 'Built in React.js, and featuring React Router and Responsive Design', features: ['React','React-Router', 'Responsive Design', 'CSS'], liveLink: 'http://dan-prototype.surge.sh', codeLink: {frontend: 'https://github.com/CastagnaTM/template_for_Dan'}}, 
-    {name: 'Tarraske Digital', image: `${src}TD.png`, description: "Good ol' JavaScript, HTML, and CSS. Responsive Design", features: ['JavaScript', 'Responsive Design', 'CSS'], liveLink: 'http://tarraskedigital.com'}, 
-    {name: 'React Blaster', image: `${src}React_Blaster.png`, description: "A Full Stack point-and-click target practice game", features: ['React', 'Ruby On Rails', 'CSS', 'CSS Animations'], liveLink: 'https://react-blaster.herokuapp.com/', codeLink: {frontend: 'https://github.com/CastagnaTM/react_blaster', backend: 'https://github.com/CastagnaTM/react_blaster_backend'}}, 
-    {name: 'Imaginary Friend Simulator', image: `${src}cookie.png`, description: "Generate an Imaginary Friend, guess their favorite activities, and try to beat your high score!", features: ['React', 'Ruby On Rails', 'Login System with Guest Access', 'CSS'], liveLink: 'http://imaginary-friend.surge.sh/', codeLink: {frontend: 'https://github.com/CastagnaTM/react-imaginary', backend: 'https://github.com/CastagnaTM/react-imaginary-api'}}]
+    const projects = [ 
+        {
+            name: 'React Blaster', image: `${src}React_Blaster.png`, description: "A Full Stack point-and-click target practice game", 
+            features: ['React', 'Ruby On Rails', 'CSS', 'CSS Animations'], liveLink: 'https://react-blaster.herokuapp.com/', 
+            codeLink: {frontend: 'https://github.com/CastagnaTM/react_blaster', backend: 'https://github.com/CastagnaTM/react_blaster_backend'}
+        }, 
+        {
+            name: 'Imaginary Friend Simulator', image: `${src}cookie.png`, description: "Generate an Imaginary Friend, guess their favorite activities, and try to beat your high score!", 
+            features: ['React', 'Ruby On Rails', 'Login System with Guest Access', 'CSS'], liveLink: 'http://imaginary-friend.surge.sh/', 
+            codeLink: {frontend: 'https://github.com/CastagnaTM/react-imaginary', backend: 'https://github.com/CastagnaTM/react-imaginary-api'}
+        },
+        {
+            name: "Dan's Unforgettable Creations", image: `${src}DanUC.jpg`, description: 'Built in React.js, and featuring React Router and Responsive Design', 
+            features: ['React','React-Router', 'Responsive Design', 'CSS'], liveLink: 'http://dan-prototype.surge.sh', 
+            codeLink: {frontend: 'https://github.com/CastagnaTM/template_for_Dan'}
+        }, 
+        {
+            name: 'Tarraske Digital', image: `${src}TD.png`, description: "Good ol' JavaScript, HTML, and CSS. Responsive Design", 
+            features: ['JavaScript', 'Responsive Design', 'CSS'], liveLink: 'http://tarraskedigital.com'
+        }
+    ]
     projects.map(item => {
         const projectLI = document.createElement('li');
             const card = document.createElement('div');
