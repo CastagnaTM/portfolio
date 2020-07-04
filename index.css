@@ -382,29 +382,36 @@ body {
   height: 500px;
   max-width: 400px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.projects #projects-container li .project-card h4 {
+.projects #projects-container li .project-card h3 {
   color: #014983;
   text-align: center;
-  font-size: larger;
-  padding: 0.5em;
+  font-size: x-large;
 }
 
 .projects #projects-container li .project-card div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 75%;
+  max-height: 75%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: auto 0;
 }
 
 .projects #projects-container li .project-card div a {
   display: block;
   max-width: 90%;
-  height: 90%;
+  height: auto;
   padding: 0;
   margin: 0 auto;
   -webkit-box-align: center;
@@ -418,15 +425,12 @@ body {
 
 .projects #projects-container li .project-card div a img {
   display: block;
-  max-height: 96%;
+  height: 90%;
+  width: 90%;
   margin: 0 auto;
   margin-bottom: 5%;
-}
-
-.projects #projects-container li .card-border {
-  display: inline-block;
-  height: 300px;
-  border: solid #014983 1px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .projects #projects-container li .project-details {
@@ -441,17 +445,11 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin: 0 auto;
+  margin-top: 10px;
   height: 500px;
   max-width: 400px;
   width: 100%;
   color: #020202;
-}
-
-.projects #projects-container li .project-details h4 {
-  color: #014983;
-  text-align: center;
-  font-size: larger;
-  padding: 0.5em;
 }
 
 .projects #projects-container li .project-details p {
@@ -491,7 +489,9 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 280px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   overflow: hidden;
 }
 
@@ -502,6 +502,7 @@ body {
   border-radius: 20px;
   background-color: #020202;
   padding: .6em .5em;
+  margin: 10px;
   font-size: large;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
@@ -523,7 +524,8 @@ body {
             flex-direction: column;
   }
   .projects #projects-container li .project-card {
-    height: 400px;
+    min-height: 350px;
+    max-height: 450px;
   }
   .projects #projects-container li .project-card div {
     max-height: 80%;
@@ -531,9 +533,8 @@ body {
   .projects #projects-container li .project-card div img {
     max-height: 90%;
   }
-  .projects #projects-container li .card-border {
+  .projects #projects-container li .project-details {
     height: auto;
-    width: 70%;
   }
 }
 

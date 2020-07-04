@@ -27,9 +27,9 @@ const loadProjects = () => {
             const card = document.createElement('div');
                 card.className = 'project-card';
         projectLI.appendChild(card)
-                const h4 = document.createElement('h4');
-                    h4.className="project-name";
-                    h4.innerText = item.name;
+                const h3 = document.createElement('h3');
+                    h3.className="project-name";
+                    h3.innerText = item.name;
                 const imgContainer = document.createElement('div');
                     const imgLink = document.createElement('a');
                         imgLink.href = item.liveLink;
@@ -41,12 +41,13 @@ const loadProjects = () => {
                             img.alt=item.name;
                     imgLink.appendChild(img);
                 imgContainer.appendChild(imgLink);
-            card.appendChild(h4);
+            card.appendChild(h3);
             card.appendChild(imgContainer);
 
-            const border = document.createElement('div');
-                border.className = 'card-border';
-        projectLI.appendChild(border);
+        //     const border = document.createElement('div');
+        //         border.className = 'card-border';
+
+        // projectLI.appendChild(border);
 
         // needs to contain a short description, list of features and two buttons
             const details = document.createElement('div');
